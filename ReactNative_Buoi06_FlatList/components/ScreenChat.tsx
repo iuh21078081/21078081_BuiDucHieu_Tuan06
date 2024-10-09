@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
+import Ionicons from '@expo/vector-icons/Ionicons';
 const ScreenChat = () => {
     type Product = {
         id: string;
@@ -16,7 +16,7 @@ const ScreenChat = () => {
         return (
           <View style={styles.headerContainer}>
             <TouchableOpacity>
-              <FontAwesome name="bars" size={24} color="white" />
+            <Ionicons name="arrow-back-outline" size={24} color="white" />
             </TouchableOpacity>
             <Text style={styles.headerTitle}>Chat</Text>
             <TouchableOpacity>
@@ -55,7 +55,6 @@ const ScreenChat = () => {
           const response = await fetch("https://66fa554aafc569e13a9b4600.mockapi.io/api/products/products")
           const productsFetch = await response.json()
           setProducts(productsFetch)
-          console.log(productsFetch)
        }
       useEffect(()=>{
         getData();
@@ -87,7 +86,7 @@ const ScreenChat = () => {
               contentContainerStyle={styles.containerProduct}
             />
           </View>
-          <Footer />
+          {/* <Footer /> */}
         </SafeAreaView>
       );
 }
